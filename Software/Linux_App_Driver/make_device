@@ -1,0 +1,7 @@
+#!/bin/bash
+mount -t debugfs none /sys/kernel/debug/
+rm -rf /dev/xilinx_pci_driver
+mknod /dev/xilinx_pci_driver c 240 1
+chown root /dev/xilinx_pci_driver
+chmod 0644 /dev/xilinx_pci_driver
+ls -al /dev/xilinx_pci_driver
